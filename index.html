@@ -1,439 +1,385 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>The Screen Is Broken</title>
-  <meta property="og:title" content="The Screen Is Boken ">
-  <meta property="og:url" content="">
-  <meta name="design" content="Leith Benkhedda" />
-  <meta name="description" content="." />
-  <meta name="keywords"  content="CGI, DISPLAY, SIMULATION, REALITY, NATURE, COMPUTATION, KABK, GRAPHIC DESIGN" />
-  <meta name="Resource-type" content="Document" />
-  <link rel="stylesheet" href="print_css">
-  <link rel="stylesheet" href="web_css">
-     <script src="js/slider.js"></script>
-    <link rel="stylesheet" href="css/slider.css">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<style type="text/css">
-
-@font-face {
-  font-family: "neue";
-  src: url(font/neue.woff2);
-  font-weight: normal;
-}
-
-body{
-
-margin: 0;
-width: 100%
-height:100%;
-font-family: "neue";
-font-size: 1.4px;
-background-color: white;
-}
-
-img {
-  width: 100%
-
-}
-
-h1 {
-  font-size: 17px;
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-}
-
-.topnav {
-
-    overflow: hidden;
-        width: 100%;
-        color: black;
-        display: inline-flex;
-}
-
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 0;
-    text-decoration: none;
-    font-size: 17px;
-    color: black;
-    background-color: white;
-}
-
-.topnav a:hover {
-    background-color: black;
-    color: white;
-}
-
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-      
-.btmnav {
-    overflow: hidden;
-        width: 100%;
-        color: black;
-        display: block;
-}
-
-.btmnav a {
-    background-color: white;
-    float: left;
-    text-align: center;
-    padding: 0;
-    text-decoration: none;
-    font-size: 17px;
-    color: transparent;
-}
-
-.btmnav a:hover {
-    color: transparent;
-}
-
-.btmnav a.active {
-    background-color: #4CAF50;
-}
-
-#content, html, body {
-    height: 98%;
-}
-#left {
-    float: left;
-    width: 49.9%;
-    background: white;
-    height: 100%;
-    overflow: scroll;
-}
-#right {
-    float: left;
-    width: 50%;
-    height: 100%;
-    overflow: scroll;
-    background-position: center;
-}
-
-.column_1 {
-  width: 100%;
-  font-size: 17px;
-    color: black;
-}
-
-.titles {
-  width: 100%;
-  font-size: 17px;
-  border-bottom: 1px solid black;
-  position: fixed;
-}
-
-.column_2 {
-  width: 49.9%;
-  font-size: 17px;
-  color: black;
-  display: inline-block;
-  text-align: center;
-}
-
-#overlay img:hover {
-
-    filter: invert(100%);
-}
-
-#overlay {
-    position: fixed; 
-    width: 20%; 
-    height: 20%;
-    top: 30%; 
-    left: 39.9%;
-    right: 0;
-    bottom: 0;
-    z-index: 3; 
-    cursor: pointer; 
-
-    
-}
-
-#overlay_2 {
-position: fixed; /* Sit on top of the page content */
-  display: block; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0; 
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
- filter: blur(0px);
-  filter: opacity(100%) blur(0px);
-
-}
-
-
-      section > span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 7vw;
-        font-family: sans-serif;
-        text-transform: uppercase;
-        color: #fff;
-      }
-
-
-section{
-  background : none;
-}
-
-button{
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-
-.slider__indicators{
-display: none;
-}
-
-.slides {
-  filter: blur(50px);
-}
-
-.slides :hover {
-  filter: blur(0px);
-/*-webkit-transition: 1s -webkit-filter linear;
--moz-transition: 1s -moz-filter linear;
--moz-transition: 1s filter linear;
--ms-transition: 1s -ms-filter linear;
--o-transition: 1s -o-filter linear;
-transition: 1s filter linear, 1s -webkit-filter linear;*/
-}
-
-</style>
-
-
-
-<body>
-
-<script src="js/jquery.min.js"></script>
-<script>
-$(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
-        if (target.length) {
-            $('#left').animate({
-              scrollTop: target.position().top(-100)
-            }, 1000);
-            return false;
-        }
-    });
-});
-</script>
-
-<script
-  src="https://code.jquery.com/jquery-2.1.4.min.js"
-  integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw="
-  crossorigin="anonymous"></script>
-<script type="text/javascript">
-  function sticky_relocate() {
-var window_top = $('#left').scrollTop();
-var div_top = $('#sticky-anchor').offset().top;
-if (window_top > div_top) {
-    $('#sticky').addClass('stick');
-} 
-else {
-    $('#sticky').removeClass('stick');
-}
-}
-
-$(function () {
-    $('#left').scroll(function(){
-      sticky_relocate();
-      console.log($('#section1').position().top);
-
-      if ($('#section3').position().top<70)
-      {
-        $('#sticky h1').text('Made of Metalic Dust'); 
-      }
-        else if ($('#section2').position().top<70)
-      {
-        $('#sticky h1').text('Come Across'); 
-      }
-         else if ($('#section1').position().top<70)
-      {
-        $('#sticky h1').text('When Reality Collapsed'); 
-      }
-    });
-});
-</script>
-
-<div id="overlay"><img src="images/track.png" alt="Girl in a jacket"></div>
-<div id="overlay_2" onclick="off()"><img style="height:100%;" src="images/sib.jpg" alt="cover"></div>
-
-
-
-
-<div class="topnav">
-  <a href="#section1" style="width:33.2%; border-right: 1px solid black; border-bottom: 1px solid black;">1</a>
-  <a href="#section2" style="width:33.4%; border-right: 1px solid black; border-bottom: 1px solid black;">2</a>
-  <a href="#section3" style="width:33.2%; border-bottom: 1px solid black;">3</a>
-</div>
-
-<div class="column_1" style="background-color: white; text-align: center; border-bottom: 1px solid black;">The Screen is Broken<br> </div>
-
-<div class="titles" style="margin-top: -1; position: fixed; z-index: 10;">
-  <div id="sticky-anchor"></div>
-<div class="column_2" style="background-color: white; text-align: center;"><div id="sticky" class='a1'><h1 class='titleMusic noSelect' style="margin: 0;"></h1></div></div>
- <div class="column_2" style="background-color: white; text-align: center; margin-left: -3px; border-left: 1px solid black; z-index: 5;">LIL MIQUELA</div>
-
-</div>
-
-<div id="content">
-  <div id="left" style="border-right: 1px solid black;">
-  <h1 style="margin: 1%"> <br>
-<section id="section1"> I can feel it damaging my sight, trying to look away but I keep on staring at the surface of the screen, not sure of what I’m seeing. Familiar, yet disturbing. I have the intuition that these images want something from me, from you, from us. From a place where nothing happens by chance, they are seeking for my attention, they want me to listen to them, they want me to trust them. 
-<br><br>
-“You feel this very strange force that since the beginning CGI are in competition with the cinematographic and cinematic images. Just like socialism wanted to defeat capitalism, they want to defeat these images and are probably on the verge to defeat them right now” Said Haroun Farocki, German filmmaker and author dead in July 2014. 
-<br><br>
-Computer generated imagery proliferate, a phenomena observable in the realm of politics, advertisement or in the entertainment industry for the past 30 years. Looking back at the past, images have always been playing a major real in how dominant narratives have been built, contributing to a common understanding of the context we are living in. Facing the raise of computer generated imagery, on it’s way to become the dominant image since the current technologies allows us to simulate every single piece of our environment. Observing the pattern of a feed back loop between representations and their subject through history, we can wonder what realities these technologies will produce in their attempt to achieve a more accurate representations of our world.
-I can feel it damaging my sight, trying to look away but I keep on staring at the surface of the screen, not sure of what I’m seeing. Familiar, yet disturbing. I have the intuition that these images want something from me, from you, from us. From a place where nothing happens by chance, they are seeking for my attention, they want me to listen to them, they want me to trust them. 
-<br><br>
-“You feel this very strange force that since the beginning CGI are in competition with the cinematographic and cinematic images. Just like socialism wanted to defeat capitalism, they want to defeat these images and are probably on the verge to defeat them right now” Said Haroun Farocki, German filmmaker and author dead in July 2014. 
-<br><br>
-Computer generated imagery proliferate, a phenomena observable in the realm of politics, advertisement or in the entertainment industry for the past 30 years. Looking back at the past, images have always been playing a major real in how dominant narratives have been built, contributing to a common understanding of the context we are living in. Facing the raise of computer generated imagery, on it’s way to become the dominant image since the current technologies allows us to simulate every single piece of our environment. Observing the pattern of a feed back loop between representations and their subject through history, we can wonder what realities these technologies will produce in their attempt to achieve a more accurate representations of our world.
-Once again, our realities are and have always deeply been interconnected with the daily stream of still and moving images that surrounds us as well as the narrative they convey.
-<br><br>
-After a primary understating of how the human eye perceives visual phenomenons, we tried to represent them accurately with the invention of linear perspective during the Renaissance*. We later achieved its capture through the lens of a camera, creating the illusion of a three dimensional space within which things appeared to exist the same way our eyes see them. From pigments to light, from light to 1’s and 0’s. Computer generated imagery technologies now allow us to simulate life, displayed by a a constantly increasing combination of pixels and frames per second on the surface of our screens*.
-<br><br>
-Now that the uncanny valley, concept developed by Masahiro Mori, Japenese professor in robotics his research on human emotional responses to non-human entities* is far behind as Alan Warburton, would argue in his movie Good Bye The Uncanny Valley. The resolution of our screens as well now goes far beyond what our eyes can perceive but we keep on developing these technologies mainly feeding the needs of the entertainment industry for more realism, a notion that André Bazin, french cinema theorist of the 19th century, author of the book What Is Cinema?* would divide in two categories. One of them  would take shape as a significant expression of the world and it’s essence when the second has as only purpose to deceive, fool the eye and the mind with illusory
-appearances. 
-<br><br>
-Not only providing us new tools for image production, digital technologies transformed our understanding of reality while changing our relationship to fabrication and circulation of images channeled by social networks, online video platforms and mainstream medias as Erika Balsom: “critic based in London, working on cinema, art, and their intersection” reminds us during her keynote presentation: “Rehabilitating observation— Lens-Based Capture and the 'Collapse' of Reality” in Amsterdam on the 2018 edition of the festival Sonic Acts emphasising on the importance of documentary practices*.
-<br><br>
-“For Hollywood, it is special effects. For covert operators in the U.S Military and intelligence agencies, it is a weapon of the future. Once you can take any kind of information and reduce it into ones and zeros, you can do some pretty interesting things.”
-Daniel T.Khuel—When Seeing and Hearing Isn’t Believing. Washington Post, 1999
-<br><br>
-In December 1972 after $25.4 Billion were invested on the Apollo program*, US Citizens facing their CRT TV could witness Eugene Cernan as the last man walking on the moon before his return to Earth on December 19th after a mission of 12 days, reinforcing once again the idea of a“technological superiority” of the US over the USSR. These images have already being subject to doubts and suspicion on wether they were shot in a studio for now a few decades. During the same year, A Computer Animated Hand, a 1 minute movie produced by the computer scientist Edwin Catmull—president of Pixar* and Walt Disney Animation studios—and Fred Park was just released as one of the earliest experiments on computer generated imagery. 350 digitised polygons and triangles to generate a simplified representation of surface of Edwin’s hand. The hand was animated in a program he wrote that would later set the standards of today’s 3D software technology. These two events had a new echo coming together once again a few months ago when Nvidia, technology company based in Santa Clara, US, one of the leaders of graphic cards manufacturing since it’s invention in 1999 recently published a video to promote the new architecture of their products now allowing real time ray-tracing* rendering. During the launch of their RTX series, Nvidia’s founder said that “using this type of rendering technology, we can simulate light physics and things are going to look the way things should look.” In this video, they will achieve a complete computer generated re-enactment of the moon landing in a game engine in order to prove the authenticity of the Apollo Mission images, published in 1972. Their project underlines the ambiguous relationship we now have to the images presented to us when contemporary image production technologies are used to dismiss the doubts they create. 
-<br><br>
-Kim Laughton and David O’reilly are two CG Artists* respectively based in Shangaï and Los Angeles. Through the online blogging platform Tumblr, they collaborated on a project titled #HyperrealCG: A collection of banal images as still life, landscapes, portraits and other objects, always followed by captions providing more information about their authors as well as the softwares used for their production. Its purpose was to showcase “the world’s most impressive and technical hyper-real 3D art”. The images published on the website were in fact photographs collected while browsing on the web or taken by Laughton and O’reilly themselves. Their enterprise was meant as a comment on fellow artist driven by the desire of achieving photo-realism in their work, considering this parameter a sign of artistic quality. The Huffington post published an article titled “You Won’t Believe These Images Aren’t Photographs” and later apologised retitling to “You Won’t Believe These Images Aren’t Photographs, Because They Are Photographs”. #HyperrealCG started spreading over the web. Eventually the two artists decided to reveal their intentions through their twitter account. Making a good joke but “not trying to fool anyone”. 
-<br><br>
-In 2017, Eliot Higgins, funder of Bellingcat—cloud based organisation, leading international investigations—discovered that still images extracted from AC-130 Gunship Simulator: Special Ops Squadron’s* promotional video had been shared by the Russian defence ministry on twitter. The release of the Images was intended as a piece of evidence, proving the collaboration of the United States with the Islamic State of Iraq and the Levent—ISIL. The post was complemented with a statement: “The US are actually covering the ISIS combat units to recover their combat capabilities, redeploy, and use them to promote the American interests in the Middle East.” A Low resolution, black and white view from above, overlayed by a crosshair located in the middle of the screen where the player opens fire on it’s targets. The Interface of the game vulgarly replicates the aesthetics of military drone monitors, enough to tell us a little bit more about our lack of understanding when it comes to identify what we are looking at.
-<br><br>
-We are now able to put words in the mouth of anybody and computer generated imagery seems uniquely suited for weaponisation and propaganda in an age of untrustworthy images where deep fake videos are already over the internet, you can ask Nicolas cage.
-<br><br>
-Far from Josh Kline’s Hope and Change* face substitutions through machine learning, in Synthesizing Obama, published in 2017 by Supasorn Suwajanakorn researcher from the University of Washington’s Graphics and Imaging Laboratory. One image was enough to simulate a three dimensional facial model even though more pictures were necessary in order to reproduce the different imperfections as wrinkles that each expression will generate. To finish with, the colours and textures would be sharpened via “a simple averaging method” allowing us to obtain a fully controllable facial model we can now drive using any video as an input while the realism of the results would still depends on the quantity of footage available online to train the model. Stanford University already developed before a similar tool with the same purpose where the results were rendered real time using a webcam only as input. Similar open source algorithms are now available under MIT—Licence*, free of use, on platforms like Github. However, generating images through the use of machine learning is not so much of an easy task either. A basic understanding of programming at least is still required and the hardware should follow as well. Unfortunately, the accuracy of the results produced by these technologies are only a part of the problem just as much as it’s costs or technicalities. It’s very existence is a new source of doubts in a time that we could already qualify as uncertain. A climate of ambient and collective paranoia reinforced by conspiracy theories adepts of all kind.
-<br><br>
-Not long before that, Julian Assange, the whistle blower, founder of the project Wikileaks* was interviewed by John Pilger*, Australian journalist for the media RT—Russia Today to discuss the US Elections. Published on Youtube, we could notice a few irregularities or glitches on some parts of the interview. In another video called 5 Reasons Julian Assange Interview with John Pilger is FAKE? #WhereisAssange #ProofOfLife, it’s author puts in parallel the softwares mentioned earlier and the visual anomalies of the interview. After 6 minutes and 54 seconds of conspiracy theories, where a badly recorded voice with a strong British accent merging with a anxiogenic soundscape is trying to convince me that Assange’s interview is faked, I would almost buy it myself. The constant growth of our ability to doctor images or generate photorealistic and physically accurate 3D renders as a phenomena is now closely linked with our progressive inability to believe any image at all.
-<br><br>
-“Democracy depends upon a certain idea of truth: not the babel of our impulses, but an independent reality visible to all citizens. This must be a goal; it can never fully be achieved. Authoritarianism raises when this goal is openly abandoned, and people conflate the truth with what they want to hear. Then begins a politics of spectacle, where the best liars with the biggest megaphones win.” Timothy Snyder—Facism is back, blame the internet. Washington Post, 2018
-<br><br>
-With the support of AI foundation, Supasorn Suwajanakorn is currently developing a browser extensions called Reality Defender, “the first of the Guardian AI technologies that we are building on our responsibility platform. Guardian AI is built around the concept that everyone should have their own personal AI agents working with them through human-AI collaboration, initially for protection against the current risks of AI, and ultimately building value for individuals as the nature of society changes as a result of AI”. The software is designed to scan every image or video looking for artificially generated content helping you to identify “fakes” you could encounter on the web, in order to counter the potential misuse of his own work.
-<br><br>
-Turning her back to John Knoll and his camera more than 30 years ago. Topless, sitting on the beach of Bora Bora island. Jennifer could probably not imagine that the intimate moment she was sharing with her partner, or that the picture of her taken a couple of hours before John proposes her, was a turning point for the future of image manipulation. Setting the ground of nowadays confusion, that day, reality suddenly became more moldable. John Knoll and his future wife Jennifer were both employees of ILM—Industrial Light and Magic, one of the first and still one of the biggest companies specialised in special effects founded in 1975 for the upcoming production of the movie Star Wars directed by George Lukas. Assisted by his brother Thomas who was doctorate in computer vision at The University of Michigan, John Knoll will design one of the first raster graphics editor. Digitised images were not so common at that time and they needed an image to provide along with the software in order for their clients to play with it. John got scanned the only image he had in hand that day, the picture of his wife. The software was called photoshop and was bought by Adobe Systems in 1989. The picture of Jennifer in Bora Bora titled “Jennifer in paradise”, is an important artefact part of images and software history that disappeared for a while until Adobe published on their youtube channel the video Photoshop: The first Demo, to celebrate the software anniversary. After watching this, the dutch artist Constant Dullart born in Leiderdorp in 1979, who’s work and research evolves around the realm of internet and its culture decided to re-construct this emblematic picture out of screenshots extracted from photoshop’s demo using it as main material for his project as well titled “Jennifer in Paradise”, an attempt to re-create photoshop filters engraving a set of glass sheets. This project will then give a new importance to an image many people forgot, allowing it to find it’s place on the web.
-</section>
-<br><br>
-<section id="section2">We are now living in a time of uncertainty, a time where reality is apparently under attack. If it didn’t already collapse under the pressure of post-modernist academics* followed by the spectacle of politics and the technological development of image production techniques as the raise of computer generated imagery. A technological development that allowed us to perceive and shape new worlds, later trespassing the surface of the screen to inhabit ours. Hito Steyerl is a filmmaker, artist and writer mainly focused on media and technologies. She mainly questions the mode of production and circulation of images. In her essay Too much world: is the internet dead? she wrote that “Reality itself is postproduced and scripted” meaning that “the world can be understood but also altered by It’s own tools.”
-<br><br>
-A dynamic pushed further if we keep in mind that the photographic image or so called lens based capture couldn’t not come to life without the encounter and collaboration of three factors : An authorial intentionality, the world as a raw material and the camera as a form of technological mediation. For David Claerbout “the photographer and his subject co-produce one another”. With Computer Generated Imagery, this interdependency no longer exist since 3D softwares and their interfaces offer a space of total control where everything is premeditated and contingency doesn’t belong. A landscape of computer generated object, bodies and environments where each component, each detail is now a question that has to be answered by it’s author in order to convince.
-<br><br>
-“The production of digital affective devices, which double as control mechanisms, is dependent on the decimation of every digitally under represented region of the world. As this new geography displaces the old, the digital subject becomes more visible than the physical subject. While the circulation of, luxury goods, liberal professionals, tourists, and fincancial flows occupies the whole field of visibility, refugees, seasonal workers, immigrants, and illegal aliens are rendered invisible”
-Julieta Aranda and Ana Texeir Pinto—Turk, Toaster, Task Rabbit, 2015
-<br><br>
-At the same time, cognitive processes as facial recognition and mirror neurones* contributed through their exploitation to the establishment of a certain commercial aesthetic and imagery as we know it: drops of condensed water carefully slipping on the surface of a bottle or the shiny stainless steel curves of an iPhone X reflecting the light emitted by glowing geometric primitives. Multiplying as cancer cells do. Appealing images made out of polygons, progressively proliferate and colonise the media landscape. Designed to make you feel and evoke sensations, capitalising on our instincts. 
-<br><br>
-Timur Si-Qin defines stock photography as an Evolutionary Attractor : "The dimensions of our image solution space represent the many dimensions that make images appealing, attractive and marketable. These dimensions are complex and varied but certain domains and constraints are identifiable. Physiological, social, economic, practical and ultimately evolutionary factors determine the existence of common image solutions.” If we are referring to stock photography here, it’s for it’s archetypal value, efficiency and seductive potential, core of a hyper-capitalist visual language now powered by CGI technologies.
-<br><br>
-A language that the founder of Auto-Italia South East*, Kate cooper, makes use of in her project titled Rigged where the narrative evolves around a stereotypical standard CG character with brown hair and blue eyes in her 30’s, similar to many others that you can find while browsing on websites like Turbosquid—online market for 3D objects. For her: “It’s not about reclaiming the world or aesthetics of hyper-capitalism, but about occupying or invading it”. She is in that way looking for a potential “freedom in the things that are supposed to restrict us” while we can wonder if wether or not she is contributing to the dynamic she comments on. 
-<br><br>
-Simone C. Nicquille is a designer based in The Netherlands, under the name Technoflesh her work questions the notion of identity and the contemporary digitisations of the human body through CGI technologies. For Simone, design tools are “encoded with politics”, and if in a certain way 3D softwares promises to free us of physical realities, their architecture, settings and options needs to be questioned. In it’s attempt to virtually reproduce three dimensional objects, complexity and imperfections are being erased, “unrecorded”, “marginalised”. Through her use of the software FUSE, a free Adobe product designed to make the design of 3D characters more accessible, she realised that it’s construction was based on anthropometric standards established by the project CAESAR* standing for Civilian American and European Surface Anthropometry Resources. Initiated by the U.S Air Force Research Laboratory between the 90’s and early 2000’s in order to create data base of body measurements for the Air Force’s cockpit and uniform design. In her essay “What does the Graphical User Interface Want?” She begins by emphasising on the distortions born out of our attempt to map the world and how projections as Mercator contributed to shape our perception of reality. It appears here that translations often comes with loss.
-<br><br>
-These bodies now have a life of themselves and digital Avatars as @Lil Miquela, a soft freckled skin 19 years old millennial based in Los Angeles, or @Shudu, production of the photographer Cameron-James Wilson and inspired by the Princess of South Africa Barbie Doll are starting to populate the web. Eric Davis, author of TechGnosis wrote twenty years ago that even though we know that technological artefacts are not alive we instinctively feel empathy towards them without being able to help it and these words resonates harder within a time of CG influencers baby boom. TechGnosis, subtitled Myth, Magic, and Mysticism in the Age of Information tries to draw or discover connections between the digital and spiritual when these two worlds nowadays seem unrelated.
-<br><br>
-In the case of @Shudu, we can see her as the embodiment of a post-colonialist ideology and heritage. Another form of neo-orientalism, created piece by piece by a white man to fit his  fantasy of what a “beautiful” black women looks or should look like using the Princess of South Africa Barbie Doll as a main reference is her construction. A digital radicalised body without a voice created by and for the market and meant to be exploited by it’s creators reinforcing the feeling that traces and symptoms of centuries of colonial history still remain in nowadays society and it’s structures. 
-<br><br>
-@Lil Miquela or Miquela Sousa already released a bunch of tracks as You, Not Mine, Should You Be Alone and On My Own until heading spotify’s top 10, have been interviewed by journalists from all over the world and shares her daily life on her instagram page with more than a million and five hundred thousands followers. Hanging out with other CG teenagers as @Blawko22 or @BurmadaisBae but also with existing celebrities as Noah Gersh reinforcing this feeling telling us that representations can’t be contained anymore or considered as such. Fighting for LGBT rights and against racism, she also models for brands like Supreme, Vetements, Prada and took over Naomi Campbell’s position as the ambassador of the make up artist Pat McGrath. Created by Brud, a “transmedia studio that creates digital character driven story worlds” that already raised around six millions dollars investment from Silicon Valley companies as Sequoia according to TechCrunch sources, @@Lil Miquela and @Shudu themselves as well probably already generated considerable profits from their activities, profits meant to go straight in the pocket of their creators.
-<br><br>
-Through the concept of Gulf Futurism*, the artist Sophia Al Maria, originally from America and Qatar consider the region where she partly grew up as “a projection of our global future” while her practice is mainly based on architectural, cultural and artistic tendencies of the the Arabian gulf. “A region that has been hyper-driven into a present made up of interior wastelands, municipal master plans and environmental collapse”.
-<br><br>
-Built on a desert, the UAE and other regions of the Gulf are in constant expansion while the architecture of it’s skyline built over the last 20 years is inhabited by a certain idea of the future that finds its source in an imaginary built by western science fiction and it’s fetish for vertical cities. After visiting Dubaï in 2005 already, with Abdullah bin Hamad bin Isa Al Khalifa, son of the King of Bahrain in order to discuss potential future building projects, Syd Mead toughts were that “The Middle East is a fantastic example of how reality is catching up with the future as the size, scope and vision of some of the region's projects clearly show. I would like to be a part of the region's horizon and help shape it for a better tomorrow”, he is a well known product designer that has been largely involved in building the environments for movies like Blade Runner released in 1982. It’s growth and fast development give birth to industrially produced future visions or “drag and drop utopias” as Tobias Revell* would call them referring to the production of 3D rendered architecture visualisation by companies as Crystal CG based in China drawing the outlines of a world to come with default tools and assets. In this 1 minute and 59 seconds video, you can admire “The new spirit of Saudi Arabia” designed by Adrian Smith and Gordon Gill and rendered by Visual Film House is 652 meters high with 176 floors above the ground, 59 elevators, 439 apartments and 2,205 Parking spaces spread over ‎243,886 m2. “Inspired by local desert plants”, the Jeddah Tower represents “new growth and high-performance technology fused into one powerful iconic from” it’s architect says. The kingdom tower unfortunately appears to be completely disconnected from its environment. 
-<br><br>
-Reality is now produced by it’s own representation or simulation. Irregularities, multiplicity, accidents are considered as errors to be fixed through a process of reduction making echo to older demons*. Our surroundings start taking the shape of an eighteen-century botanic atlas, where instead of an array of singular specimens, we are now surrounded by ideals. Simulations whispering that nature is messy, chaotic, that it needs to be perfecte. Computation seems to be the tool of it’s current mutation.
-<br><br>
-A process of reduction that probably finds its origin a few centuries ago in a scientific obsession for objectivity when atlases were designed in order to register and make sense of the world, a process in which to decide if wether a picture is an “accurate rendering of nature”, the atlas maker must “first decide what nature is” says Lorraine Daston and Peter Galison in their book The Image of Objectivity looking into scientific depiction of nature in relation with such a concept.
-<br><br>
-“Reality will soon cease to be the standard by which to judge the imperfect image. Instead, the virtual image will become the standard by which to measure the imperfections of reality”, Haroun Farocki.
-</section>
-<br><br>
-<section id="section3">
-  Fictional narratives, binary realities, singular visions of the future and other flawless bodies are also made of matter. 
-<br><br>
-Sand became precious. Composed of quartz, silicon dioxide or silica used to produce our hardware or the finer optic cable through which this website has most probably been channeled. In the 50’s, William Shockley, one of the inventors of the transistor, who used to be an engineer for the tech company Bell Labs, left to build his own in Mountain View, or Santa Clara Valley in California. Near Stanford University and less than an hour away from San Francisco. William would be the first to focus exclusively on silicon, an industry now worth a few billion dollars. Robert Noyce was of his employees, later found the company Intel releasing their first computer chip in 1971 with 2250 transistors. They now contain billions of them and a considerable proportion of the silicon present in our hardware have been extracted by Unimin—Company based in North Carolina. Subject to a complex production process, going through multiple phases in order to become pure at 99.99999999999%. Ingots later cut into wafers and sold to companies as Intel turning them into computer chips.
-<br><br>
-Europium is a video essay directed by Lisa Rave, artist currently living and working in Berlin who’s practice focuses on film. Co-written with Erik Blinderman the project underlines the ambiguous link between a corpus of hyper saturated photographs of “Nature” often displayed in commercials for TV screens, perfect subject to testify of the resolution manufacturers try to promote and one of the main resources used to build and power the screen themselves. “Europium is not only the title and the subject of the film, it literally plays a role by making the images appear to the viewer as they are” she tells Stefanie Hessler in an interview for Vdrome*. Esther Leslie, political Aesthetics professor at Birkbeck in London as well focuses on the physicality* of these images questioning what they are made of taking us through a history of the liquid crystals hidden under “any glass surface on which lively events take place”. 
-<br><br>
-A process of mutation that we can easily put in parallel with the way graphic cards are produced and their actual purpose. Here, it isn’t about Europium* or liquid crystals anymore, but about Silicon, the second most abundant element on earth surface. Promoted for it’s semi-conductor qualities meaning a balanced ability to conduct and resist electricity, that’s what computer chips have been made of until now giving it’s name to the well known valley. We could here draw a similar path if considering how the industry or let’s say we, managed to build out of sand, out of clay, out of rocks, these images that haunt us giving birth at the same time to scarred landscape and disrupted ecosystems.
-<br><br>
-Gordon Moore, one of the Intel founders, leading the processing units or CPU industry predicted in 1965 that the quantity of transistors embedded in computer chips would double every eighteen months, meaning approximatively fifty percent increase in performance per year with no effect on it’s production cost.
-The current 14 nanometer technology has been made available to consumers in 2014 and we are heading towards the mainstream production of the coming 10 nanometers technology. While Intel keeps trying to maintain the Moore’s law alive with a potential 7 nanometers technology, NVIDIA, the company that launched the first graphic card in 1999 speculates on it’s end and promises a “1000X speed up of GPU computing by 2025”. 
-<br><br>
-Tools that used to be produce in order to power images are apparently now starting to power reality itself. Nvidia is currently leading a team of more than 200 researcher on Artificial intelligence. “A Visionary, a healer, a creator and so much more. I am AI, brought to life by NVIDIA” That’s what a soft and feminine voice over tells us while watching the promotional video available on their website. 
-Simulating geometry, lights, shadows, materials, physics, fluids requires millions, billions computations per second turning it into a pretty intensive task to handle and these are problems GPU’s are simply better at solving, their architecture being more appropriate. It appears that it is as well the perfect tool to power to new wave of automation to come.
-
-In our journey driven by our desire to achieve a more accurate, better, ideal representation of nature, navigating through the media landscape became a complex task and we are endlessly questioning images, their modes of production and their agenda while wondering what we are looking at. Slowly loosing sense of reality, we can no longer believe what we see. 
-A registration of the world that as well, does not come without consequences. A process of reduction where a part of it is complexity, of its multitude stays un-rendered. 
-<br><br>
-These two phenomenons find their origin in another loss. The industry of silicon mining, a necessary step in order to give birth to the images we are referring to, has a significant ecological impact. 
-<br><br>
-We can observe an interesting dynamic where reality is now produced by its own representation, they shattered and crossed the surface of the screen to take place among us. It suddenly feels like shaping new worlds might maybe cost us our own. Automation now powered by the same tools and hardware seem to be the next shift to come, a step further in a production of new realities. In other terms, the screen is broken.
-</section>
-<br>
-  </div>
-  <div id="right" style="pointer-events:none;">
-       <div class="slides" style="z-index: -1:">
-      <img id="bastard" src="images/lil.jpg" alt="Girl in a jacket"  style="z-index: -1; height: 100%;"></section>
-      <section id="french" ><img src="images/europium.jpg" alt="europium"  style="z-index: -1; height: 100%;"></section>
-      <section id="spanish"><span>Hola</span></section>
-      <section id="hindi"><span>Namaste</span></section>
-      <section id="mandarin" style="z-index: -1; height: 100%;"><span>blabla</span></section>
-    </div>
-  </div>
-</div>
-
-<div class="btmnav" style="bottom: 0; position: fixed;">
-<a href="#Home" class="button" style="width:49.8%; border-right: 1px solid black; border-top: 1px solid black; background-color: black; color: black;"><button onclick="on()">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</button></a>
-  <a href="#Credits" style="width:50%; border-top: 1px solid black; ">2</a>
-</div>
-
-<script>
-      slider('.slides');
-    </script>
-
-    <script type="text/javascript">
-  function on() {
-  document.getElementById("overlay_2").style.display = "block";
-}
-
-function off() {
-  document.getElementById("overlay_2").style.display = "none";
-}
-</script>
-
-</body>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>The Screen Is Broken</title>
+      <meta property="og:title" content="The Screen Is Boken ">
+      <meta property="og:url" content="">
+      <meta name="design" content="Leith Benkhedda" />
+      <meta name="description" content="." />
+      <meta name="keywords"  content="CGI, DISPLAY, SIMULATION, REALITY, NATURE, COMPUTATION, KABK, GRAPHIC DESIGN" />
+      <meta name="Resource-type" content="Document" />
+      <link rel="stylesheet" href="print_css">
+      <link rel="stylesheet" href="web_css">
+      <script src="js/slider.js"></script>
+      <link rel="stylesheet" href="css/slider.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style type="text/css">
+         @font-face {
+         font-family: "neue";
+         src: url(font/neue.woff2);
+         font-weight: normal;
+         }
+         body{
+         margin: 0;
+         width: 100%
+         height:100%;
+         font-family: "neue";
+         font-size: 1.4px;
+         background-color: white;
+         }
+         img {
+         width: 100%
+         }
+         h1 {
+         font-size: 17px;
+         font-weight: normal;
+         }
+         h2 {
+         font-size: 24px;
+         font-weight: normal;
+         text-align: center;
+         }
+         .topnav {
+         overflow: hidden;
+         width: 100%;
+         color: black;
+         display: inline-flex;
+         }
+         .topnav a {
+         float: left;
+         color: #f2f2f2;
+         text-align: center;
+         padding: 0;
+         text-decoration: none;
+         font-size: 17px;
+         color: black;
+         background-color: white;
+         }
+         .topnav a:hover {
+         background-color: black;
+         color: white;
+         }
+         .topnav a.active {
+         background-color: #4CAF50;
+         color: white;
+         }
+         .btmnav {
+         overflow: hidden;
+         width: 100%;
+         color: black;
+         display: block;
+         }
+         .btmnav a {
+         background-color: white;
+         float: left;
+         text-align: center;
+         padding: 0;
+         text-decoration: none;
+         font-size: 17px;
+         color: transparent;
+         }
+         .btmnav a:hover {
+         color: transparent;
+         }
+         .btmnav a.active {
+         background-color: #4CAF50;
+         }
+         #content, html, body {
+         height: 98%;
+         }
+         #left {
+         float: left;
+         width: 49.9%;
+         background: white;
+         height: 100%;
+         overflow: scroll;
+         }
+         #right {
+         float: left;
+         width: 50%;
+         height: 100%;
+         overflow: scroll;
+         background-position: center;
+         }
+         .column_1 {
+         width: 100%;
+         font-size: 17px;
+         color: black;
+         }
+         .titles {
+         width: 100%;
+         font-size: 17px;
+         border-bottom: 1px solid black;
+         position: fixed;
+         }
+         .column_2 {
+         width: 49.9%;
+         font-size: 17px;
+         color: black;
+         display: inline-block;
+         text-align: center;
+         }
+         #overlay img:hover {
+         filter: invert(100%);
+         }
+         #overlay {
+         position: fixed; 
+         width: 20%; 
+         height: 20%;
+         top: 30%; 
+         left: 39.9%;
+         right: 0;
+         bottom: 0;
+         z-index: 3; 
+         cursor: pointer; 
+         }
+         #overlay_2 {
+         position: fixed; /* Sit on top of the page content */
+         display: block; /* Hidden by default */
+         width: 100%; /* Full width (cover the whole page) */
+         height: 100%; /* Full height (cover the whole page) */
+         top: 0; 
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+         z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+         cursor: pointer; /* Add a pointer on hover */
+         filter: blur(0px);
+         filter: opacity(100%) blur(0px);
+         }
+         section > span {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         font-size: 7vw;
+         font-family: sans-serif;
+         text-transform: uppercase;
+         color: #fff;
+         }
+         section{
+         background : none;
+         }
+         button{
+         background: none;
+         color: inherit;
+         border: none;
+         padding: 0;
+         font: inherit;
+         cursor: pointer;
+         outline: inherit;
+         }
+         .slider__indicators{
+         display: none;
+         }
+         .slides {
+         filter: blur(50px);
+         }
+         .slides :hover {
+         filter: blur(0px);
+         /*-webkit-transition: 1s -webkit-filter linear;
+         -moz-transition: 1s -moz-filter linear;
+         -moz-transition: 1s filter linear;
+         -ms-transition: 1s -ms-filter linear;
+         -o-transition: 1s -o-filter linear;
+         transition: 1s filter linear, 1s -webkit-filter linear;*/
+         }
+      </style>
+   <body>
+      <script src="js/jquery.min.js"></script>
+      <script>
+         $(function() {
+             $('a[href*=#]:not([href=#])').click(function() {
+                 var target = $(this.hash);
+                 target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+                 if (target.length) {
+                     $('#left').animate({
+                       scrollTop: target.position().top(-100)
+                     }, 1000);
+                     return false;
+                 }
+             });
+         });
+      </script>
+      <script
+         src="https://code.jquery.com/jquery-2.1.4.min.js"
+         integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw="
+         crossorigin="anonymous"></script>
+      <script type="text/javascript">
+         function sticky_relocate() {
+         var window_top = $('#left').scrollTop();
+         var div_top = $('#sticky-anchor').offset().top;
+         if (window_top > div_top) {
+           $('#sticky').addClass('stick');
+         } 
+         else {
+           $('#sticky').removeClass('stick');
+         }
+         }
+         
+         $(function () {
+           $('#left').scroll(function(){
+             sticky_relocate();
+             console.log($('#section1').position().top);
+         
+             if ($('#section3').position().top<70)
+             {
+               $('#sticky h1').text('Made of Metalic Dust'); 
+             }
+               else if ($('#section2').position().top<70)
+             {
+               $('#sticky h1').text('Come Across'); 
+             }
+                else if ($('#section1').position().top<70)
+             {
+               $('#sticky h1').text('When Reality Collapsed'); 
+             }
+           });
+         });
+      </script>
+      <div id="overlay"><img src="images/track.png" alt="Girl in a jacket"></div>
+      <div id="overlay_2" onclick="off()"><img style="height:100%;" src="images/sib.jpg" alt="cover"></div>
+      <div class="topnav">
+         <a href="#section1" style="width:33.2%; border-right: 1px solid black; border-bottom: 1px solid black;">1</a>
+         <a href="#section2" style="width:33.4%; border-right: 1px solid black; border-bottom: 1px solid black;">2</a>
+         <a href="#section3" style="width:33.2%; border-bottom: 1px solid black;">3</a>
+      </div>
+      <div class="column_1" style="background-color: white; text-align: center; border-bottom: 1px solid black;">The Screen is Broken<br> </div>
+      <div class="titles" style="margin-top: -1; position: fixed; z-index: 10;">
+         <div id="sticky-anchor"></div>
+         <div class="column_2" style="background-color: white; text-align: center;">
+            <div id="sticky" class='a1'>
+               <h1 class='titleMusic noSelect' style="margin: 0;"></h1>
+            </div>
+         </div>
+         <div class="column_2" style="background-color: white; text-align: center; margin-left: -3px; border-left: 1px solid black; z-index: 5;">LIL MIQUELA</div>
+      </div>
+      <div id="content">
+         <div id="left" style="border-right: 1px solid black;">
+            <h1 style="margin: 1%">
+            <br>
+            <section id="section1"> I can feel it damaging my sight, trying to look away but I keep on staring at the surface of the screen, not sure of what I’m seeing. Familiar, yet disturbing. I have the intuition that these images want something from me, from you, from us. From a place where nothing happens by chance, they are seeking for my attention, they want me to listen to them, they want me to trust them. 
+               <br><br>
+               “You feel this very strange force that since the beginning CGI are in competition with the cinematographic and cinematic images. Just like socialism wanted to defeat capitalism, they want to defeat these images and are probably on the verge to defeat them right now” Said Haroun Farocki, German filmmaker and author dead in July 2014. 
+               <br><br>
+               Computer generated imagery proliferate, a phenomena observable in the realm of politics, advertisement or in the entertainment industry for the past 30 years. Looking back at the past, images have always been playing a major real in how dominant narratives have been built, contributing to a common understanding of the context we are living in. Facing the raise of computer generated imagery, on it’s way to become the dominant image since the current technologies allows us to simulate every single piece of our environment. Observing the pattern of a feed back loop between representations and their subject through history, we can wonder what realities these technologies will produce in their attempt to achieve a more accurate representations of our world.
+               I can feel it damaging my sight, trying to look away but I keep on staring at the surface of the screen, not sure of what I’m seeing. Familiar, yet disturbing. I have the intuition that these images want something from me, from you, from us. From a place where nothing happens by chance, they are seeking for my attention, they want me to listen to them, they want me to trust them. 
+               <br><br>
+               “You feel this very strange force that since the beginning CGI are in competition with the cinematographic and cinematic images. Just like socialism wanted to defeat capitalism, they want to defeat these images and are probably on the verge to defeat them right now” Said Haroun Farocki, German filmmaker and author dead in July 2014. 
+               <br><br>
+               Computer generated imagery proliferate, a phenomena observable in the realm of politics, advertisement or in the entertainment industry for the past 30 years. Looking back at the past, images have always been playing a major real in how dominant narratives have been built, contributing to a common understanding of the context we are living in. Facing the raise of computer generated imagery, on it’s way to become the dominant image since the current technologies allows us to simulate every single piece of our environment. Observing the pattern of a feed back loop between representations and their subject through history, we can wonder what realities these technologies will produce in their attempt to achieve a more accurate representations of our world.
+               Once again, our realities are and have always deeply been interconnected with the daily stream of still and moving images that surrounds us as well as the narrative they convey.
+               <br><br>
+               After a primary understating of how the human eye perceives visual phenomenons, we tried to represent them accurately with the invention of linear perspective during the Renaissance*. We later achieved its capture through the lens of a camera, creating the illusion of a three dimensional space within which things appeared to exist the same way our eyes see them. From pigments to light, from light to 1’s and 0’s. Computer generated imagery technologies now allow us to simulate life, displayed by a a constantly increasing combination of pixels and frames per second on the surface of our screens*.
+               <br><br>
+               Now that the uncanny valley, concept developed by Masahiro Mori, Japenese professor in robotics his research on human emotional responses to non-human entities* is far behind as Alan Warburton, would argue in his movie Good Bye The Uncanny Valley. The resolution of our screens as well now goes far beyond what our eyes can perceive but we keep on developing these technologies mainly feeding the needs of the entertainment industry for more realism, a notion that André Bazin, french cinema theorist of the 19th century, author of the book What Is Cinema?* would divide in two categories. One of them  would take shape as a significant expression of the world and it’s essence when the second has as only purpose to deceive, fool the eye and the mind with illusory
+               appearances. 
+               <br><br>
+               Not only providing us new tools for image production, digital technologies transformed our understanding of reality while changing our relationship to fabrication and circulation of images channeled by social networks, online video platforms and mainstream medias as Erika Balsom: “critic based in London, working on cinema, art, and their intersection” reminds us during her keynote presentation: “Rehabilitating observation— Lens-Based Capture and the 'Collapse' of Reality” in Amsterdam on the 2018 edition of the festival Sonic Acts emphasising on the importance of documentary practices*.
+               <br><br>
+               “For Hollywood, it is special effects. For covert operators in the U.S Military and intelligence agencies, it is a weapon of the future. Once you can take any kind of information and reduce it into ones and zeros, you can do some pretty interesting things.”
+               Daniel T.Khuel—When Seeing and Hearing Isn’t Believing. Washington Post, 1999
+               <br><br>
+               In December 1972 after $25.4 Billion were invested on the Apollo program*, US Citizens facing their CRT TV could witness Eugene Cernan as the last man walking on the moon before his return to Earth on December 19th after a mission of 12 days, reinforcing once again the idea of a“technological superiority” of the US over the USSR. These images have already being subject to doubts and suspicion on wether they were shot in a studio for now a few decades. During the same year, A Computer Animated Hand, a 1 minute movie produced by the computer scientist Edwin Catmull—president of Pixar* and Walt Disney Animation studios—and Fred Park was just released as one of the earliest experiments on computer generated imagery. 350 digitised polygons and triangles to generate a simplified representation of surface of Edwin’s hand. The hand was animated in a program he wrote that would later set the standards of today’s 3D software technology. These two events had a new echo coming together once again a few months ago when Nvidia, technology company based in Santa Clara, US, one of the leaders of graphic cards manufacturing since it’s invention in 1999 recently published a video to promote the new architecture of their products now allowing real time ray-tracing* rendering. During the launch of their RTX series, Nvidia’s founder said that “using this type of rendering technology, we can simulate light physics and things are going to look the way things should look.” In this video, they will achieve a complete computer generated re-enactment of the moon landing in a game engine in order to prove the authenticity of the Apollo Mission images, published in 1972. Their project underlines the ambiguous relationship we now have to the images presented to us when contemporary image production technologies are used to dismiss the doubts they create. 
+               <br><br>
+               Kim Laughton and David O’reilly are two CG Artists* respectively based in Shangaï and Los Angeles. Through the online blogging platform Tumblr, they collaborated on a project titled #HyperrealCG: A collection of banal images as still life, landscapes, portraits and other objects, always followed by captions providing more information about their authors as well as the softwares used for their production. Its purpose was to showcase “the world’s most impressive and technical hyper-real 3D art”. The images published on the website were in fact photographs collected while browsing on the web or taken by Laughton and O’reilly themselves. Their enterprise was meant as a comment on fellow artist driven by the desire of achieving photo-realism in their work, considering this parameter a sign of artistic quality. The Huffington post published an article titled “You Won’t Believe These Images Aren’t Photographs” and later apologised retitling to “You Won’t Believe These Images Aren’t Photographs, Because They Are Photographs”. #HyperrealCG started spreading over the web. Eventually the two artists decided to reveal their intentions through their twitter account. Making a good joke but “not trying to fool anyone”. 
+               <br><br>
+               In 2017, Eliot Higgins, funder of Bellingcat—cloud based organisation, leading international investigations—discovered that still images extracted from AC-130 Gunship Simulator: Special Ops Squadron’s* promotional video had been shared by the Russian defence ministry on twitter. The release of the Images was intended as a piece of evidence, proving the collaboration of the United States with the Islamic State of Iraq and the Levent—ISIL. The post was complemented with a statement: “The US are actually covering the ISIS combat units to recover their combat capabilities, redeploy, and use them to promote the American interests in the Middle East.” A Low resolution, black and white view from above, overlayed by a crosshair located in the middle of the screen where the player opens fire on it’s targets. The Interface of the game vulgarly replicates the aesthetics of military drone monitors, enough to tell us a little bit more about our lack of understanding when it comes to identify what we are looking at.
+               <br><br>
+               We are now able to put words in the mouth of anybody and computer generated imagery seems uniquely suited for weaponisation and propaganda in an age of untrustworthy images where deep fake videos are already over the internet, you can ask Nicolas cage.
+               <br><br>
+               Far from Josh Kline’s Hope and Change* face substitutions through machine learning, in Synthesizing Obama, published in 2017 by Supasorn Suwajanakorn researcher from the University of Washington’s Graphics and Imaging Laboratory. One image was enough to simulate a three dimensional facial model even though more pictures were necessary in order to reproduce the different imperfections as wrinkles that each expression will generate. To finish with, the colours and textures would be sharpened via “a simple averaging method” allowing us to obtain a fully controllable facial model we can now drive using any video as an input while the realism of the results would still depends on the quantity of footage available online to train the model. Stanford University already developed before a similar tool with the same purpose where the results were rendered real time using a webcam only as input. Similar open source algorithms are now available under MIT—Licence*, free of use, on platforms like Github. However, generating images through the use of machine learning is not so much of an easy task either. A basic understanding of programming at least is still required and the hardware should follow as well. Unfortunately, the accuracy of the results produced by these technologies are only a part of the problem just as much as it’s costs or technicalities. It’s very existence is a new source of doubts in a time that we could already qualify as uncertain. A climate of ambient and collective paranoia reinforced by conspiracy theories adepts of all kind.
+               <br><br>
+               Not long before that, Julian Assange, the whistle blower, founder of the project Wikileaks* was interviewed by John Pilger*, Australian journalist for the media RT—Russia Today to discuss the US Elections. Published on Youtube, we could notice a few irregularities or glitches on some parts of the interview. In another video called 5 Reasons Julian Assange Interview with John Pilger is FAKE? #WhereisAssange #ProofOfLife, it’s author puts in parallel the softwares mentioned earlier and the visual anomalies of the interview. After 6 minutes and 54 seconds of conspiracy theories, where a badly recorded voice with a strong British accent merging with a anxiogenic soundscape is trying to convince me that Assange’s interview is faked, I would almost buy it myself. The constant growth of our ability to doctor images or generate photorealistic and physically accurate 3D renders as a phenomena is now closely linked with our progressive inability to believe any image at all.
+               <br><br>
+               “Democracy depends upon a certain idea of truth: not the babel of our impulses, but an independent reality visible to all citizens. This must be a goal; it can never fully be achieved. Authoritarianism raises when this goal is openly abandoned, and people conflate the truth with what they want to hear. Then begins a politics of spectacle, where the best liars with the biggest megaphones win.” Timothy Snyder—Facism is back, blame the internet. Washington Post, 2018
+               <br><br>
+               With the support of AI foundation, Supasorn Suwajanakorn is currently developing a browser extensions called Reality Defender, “the first of the Guardian AI technologies that we are building on our responsibility platform. Guardian AI is built around the concept that everyone should have their own personal AI agents working with them through human-AI collaboration, initially for protection against the current risks of AI, and ultimately building value for individuals as the nature of society changes as a result of AI”. The software is designed to scan every image or video looking for artificially generated content helping you to identify “fakes” you could encounter on the web, in order to counter the potential misuse of his own work.
+               <br><br>
+               Turning her back to John Knoll and his camera more than 30 years ago. Topless, sitting on the beach of Bora Bora island. Jennifer could probably not imagine that the intimate moment she was sharing with her partner, or that the picture of her taken a couple of hours before John proposes her, was a turning point for the future of image manipulation. Setting the ground of nowadays confusion, that day, reality suddenly became more moldable. John Knoll and his future wife Jennifer were both employees of ILM—Industrial Light and Magic, one of the first and still one of the biggest companies specialised in special effects founded in 1975 for the upcoming production of the movie Star Wars directed by George Lukas. Assisted by his brother Thomas who was doctorate in computer vision at The University of Michigan, John Knoll will design one of the first raster graphics editor. Digitised images were not so common at that time and they needed an image to provide along with the software in order for their clients to play with it. John got scanned the only image he had in hand that day, the picture of his wife. The software was called photoshop and was bought by Adobe Systems in 1989. The picture of Jennifer in Bora Bora titled “Jennifer in paradise”, is an important artefact part of images and software history that disappeared for a while until Adobe published on their youtube channel the video Photoshop: The first Demo, to celebrate the software anniversary. After watching this, the dutch artist Constant Dullart born in Leiderdorp in 1979, who’s work and research evolves around the realm of internet and its culture decided to re-construct this emblematic picture out of screenshots extracted from photoshop’s demo using it as main material for his project as well titled “Jennifer in Paradise”, an attempt to re-create photoshop filters engraving a set of glass sheets. This project will then give a new importance to an image many people forgot, allowing it to find it’s place on the web.
+            </section>
+            <br><br>
+            <section id="section2">We are now living in a time of uncertainty, a time where reality is apparently under attack. If it didn’t already collapse under the pressure of post-modernist academics* followed by the spectacle of politics and the technological development of image production techniques as the raise of computer generated imagery. A technological development that allowed us to perceive and shape new worlds, later trespassing the surface of the screen to inhabit ours. Hito Steyerl is a filmmaker, artist and writer mainly focused on media and technologies. She mainly questions the mode of production and circulation of images. In her essay Too much world: is the internet dead? she wrote that “Reality itself is postproduced and scripted” meaning that “the world can be understood but also altered by It’s own tools.”
+               <br><br>
+               A dynamic pushed further if we keep in mind that the photographic image or so called lens based capture couldn’t not come to life without the encounter and collaboration of three factors : An authorial intentionality, the world as a raw material and the camera as a form of technological mediation. For David Claerbout “the photographer and his subject co-produce one another”. With Computer Generated Imagery, this interdependency no longer exist since 3D softwares and their interfaces offer a space of total control where everything is premeditated and contingency doesn’t belong. A landscape of computer generated object, bodies and environments where each component, each detail is now a question that has to be answered by it’s author in order to convince.
+               <br><br>
+               “The production of digital affective devices, which double as control mechanisms, is dependent on the decimation of every digitally under represented region of the world. As this new geography displaces the old, the digital subject becomes more visible than the physical subject. While the circulation of, luxury goods, liberal professionals, tourists, and fincancial flows occupies the whole field of visibility, refugees, seasonal workers, immigrants, and illegal aliens are rendered invisible”
+               Julieta Aranda and Ana Texeir Pinto—Turk, Toaster, Task Rabbit, 2015
+               <br><br>
+               At the same time, cognitive processes as facial recognition and mirror neurones* contributed through their exploitation to the establishment of a certain commercial aesthetic and imagery as we know it: drops of condensed water carefully slipping on the surface of a bottle or the shiny stainless steel curves of an iPhone X reflecting the light emitted by glowing geometric primitives. Multiplying as cancer cells do. Appealing images made out of polygons, progressively proliferate and colonise the media landscape. Designed to make you feel and evoke sensations, capitalising on our instincts. 
+               <br><br>
+               Timur Si-Qin defines stock photography as an Evolutionary Attractor : "The dimensions of our image solution space represent the many dimensions that make images appealing, attractive and marketable. These dimensions are complex and varied but certain domains and constraints are identifiable. Physiological, social, economic, practical and ultimately evolutionary factors determine the existence of common image solutions.” If we are referring to stock photography here, it’s for it’s archetypal value, efficiency and seductive potential, core of a hyper-capitalist visual language now powered by CGI technologies.
+               <br><br>
+               A language that the founder of Auto-Italia South East*, Kate cooper, makes use of in her project titled Rigged where the narrative evolves around a stereotypical standard CG character with brown hair and blue eyes in her 30’s, similar to many others that you can find while browsing on websites like Turbosquid—online market for 3D objects. For her: “It’s not about reclaiming the world or aesthetics of hyper-capitalism, but about occupying or invading it”. She is in that way looking for a potential “freedom in the things that are supposed to restrict us” while we can wonder if wether or not she is contributing to the dynamic she comments on. 
+               <br><br>
+               Simone C. Nicquille is a designer based in The Netherlands, under the name Technoflesh her work questions the notion of identity and the contemporary digitisations of the human body through CGI technologies. For Simone, design tools are “encoded with politics”, and if in a certain way 3D softwares promises to free us of physical realities, their architecture, settings and options needs to be questioned. In it’s attempt to virtually reproduce three dimensional objects, complexity and imperfections are being erased, “unrecorded”, “marginalised”. Through her use of the software FUSE, a free Adobe product designed to make the design of 3D characters more accessible, she realised that it’s construction was based on anthropometric standards established by the project CAESAR* standing for Civilian American and European Surface Anthropometry Resources. Initiated by the U.S Air Force Research Laboratory between the 90’s and early 2000’s in order to create data base of body measurements for the Air Force’s cockpit and uniform design. In her essay “What does the Graphical User Interface Want?” She begins by emphasising on the distortions born out of our attempt to map the world and how projections as Mercator contributed to shape our perception of reality. It appears here that translations often comes with loss.
+               <br><br>
+               These bodies now have a life of themselves and digital Avatars as @Lil Miquela, a soft freckled skin 19 years old millennial based in Los Angeles, or @Shudu, production of the photographer Cameron-James Wilson and inspired by the Princess of South Africa Barbie Doll are starting to populate the web. Eric Davis, author of TechGnosis wrote twenty years ago that even though we know that technological artefacts are not alive we instinctively feel empathy towards them without being able to help it and these words resonates harder within a time of CG influencers baby boom. TechGnosis, subtitled Myth, Magic, and Mysticism in the Age of Information tries to draw or discover connections between the digital and spiritual when these two worlds nowadays seem unrelated.
+               <br><br>
+               In the case of @Shudu, we can see her as the embodiment of a post-colonialist ideology and heritage. Another form of neo-orientalism, created piece by piece by a white man to fit his  fantasy of what a “beautiful” black women looks or should look like using the Princess of South Africa Barbie Doll as a main reference is her construction. A digital radicalised body without a voice created by and for the market and meant to be exploited by it’s creators reinforcing the feeling that traces and symptoms of centuries of colonial history still remain in nowadays society and it’s structures. 
+               <br><br>
+               @Lil Miquela or Miquela Sousa already released a bunch of tracks as You, Not Mine, Should You Be Alone and On My Own until heading spotify’s top 10, have been interviewed by journalists from all over the world and shares her daily life on her instagram page with more than a million and five hundred thousands followers. Hanging out with other CG teenagers as @Blawko22 or @BurmadaisBae but also with existing celebrities as Noah Gersh reinforcing this feeling telling us that representations can’t be contained anymore or considered as such. Fighting for LGBT rights and against racism, she also models for brands like Supreme, Vetements, Prada and took over Naomi Campbell’s position as the ambassador of the make up artist Pat McGrath. Created by Brud, a “transmedia studio that creates digital character driven story worlds” that already raised around six millions dollars investment from Silicon Valley companies as Sequoia according to TechCrunch sources, @@Lil Miquela and @Shudu themselves as well probably already generated considerable profits from their activities, profits meant to go straight in the pocket of their creators.
+               <br><br>
+               Through the concept of Gulf Futurism*, the artist Sophia Al Maria, originally from America and Qatar consider the region where she partly grew up as “a projection of our global future” while her practice is mainly based on architectural, cultural and artistic tendencies of the the Arabian gulf. “A region that has been hyper-driven into a present made up of interior wastelands, municipal master plans and environmental collapse”.
+               <br><br>
+               Built on a desert, the UAE and other regions of the Gulf are in constant expansion while the architecture of it’s skyline built over the last 20 years is inhabited by a certain idea of the future that finds its source in an imaginary built by western science fiction and it’s fetish for vertical cities. After visiting Dubaï in 2005 already, with Abdullah bin Hamad bin Isa Al Khalifa, son of the King of Bahrain in order to discuss potential future building projects, Syd Mead toughts were that “The Middle East is a fantastic example of how reality is catching up with the future as the size, scope and vision of some of the region's projects clearly show. I would like to be a part of the region's horizon and help shape it for a better tomorrow”, he is a well known product designer that has been largely involved in building the environments for movies like Blade Runner released in 1982. It’s growth and fast development give birth to industrially produced future visions or “drag and drop utopias” as Tobias Revell* would call them referring to the production of 3D rendered architecture visualisation by companies as Crystal CG based in China drawing the outlines of a world to come with default tools and assets. In this 1 minute and 59 seconds video, you can admire “The new spirit of Saudi Arabia” designed by Adrian Smith and Gordon Gill and rendered by Visual Film House is 652 meters high with 176 floors above the ground, 59 elevators, 439 apartments and 2,205 Parking spaces spread over ‎243,886 m2. “Inspired by local desert plants”, the Jeddah Tower represents “new growth and high-performance technology fused into one powerful iconic from” it’s architect says. The kingdom tower unfortunately appears to be completely disconnected from its environment. 
+               <br><br>
+               Reality is now produced by it’s own representation or simulation. Irregularities, multiplicity, accidents are considered as errors to be fixed through a process of reduction making echo to older demons*. Our surroundings start taking the shape of an eighteen-century botanic atlas, where instead of an array of singular specimens, we are now surrounded by ideals. Simulations whispering that nature is messy, chaotic, that it needs to be perfecte. Computation seems to be the tool of it’s current mutation.
+               <br><br>
+               A process of reduction that probably finds its origin a few centuries ago in a scientific obsession for objectivity when atlases were designed in order to register and make sense of the world, a process in which to decide if wether a picture is an “accurate rendering of nature”, the atlas maker must “first decide what nature is” says Lorraine Daston and Peter Galison in their book The Image of Objectivity looking into scientific depiction of nature in relation with such a concept.
+               <br><br>
+               “Reality will soon cease to be the standard by which to judge the imperfect image. Instead, the virtual image will become the standard by which to measure the imperfections of reality”, Haroun Farocki.
+            </section>
+            <br><br>
+            <section id="section3">
+               Fictional narratives, binary realities, singular visions of the future and other flawless bodies are also made of matter. 
+               <br><br>
+               Sand became precious. Composed of quartz, silicon dioxide or silica used to produce our hardware or the finer optic cable through which this website has most probably been channeled. In the 50’s, William Shockley, one of the inventors of the transistor, who used to be an engineer for the tech company Bell Labs, left to build his own in Mountain View, or Santa Clara Valley in California. Near Stanford University and less than an hour away from San Francisco. William would be the first to focus exclusively on silicon, an industry now worth a few billion dollars. Robert Noyce was of his employees, later found the company Intel releasing their first computer chip in 1971 with 2250 transistors. They now contain billions of them and a considerable proportion of the silicon present in our hardware have been extracted by Unimin—Company based in North Carolina. Subject to a complex production process, going through multiple phases in order to become pure at 99.99999999999%. Ingots later cut into wafers and sold to companies as Intel turning them into computer chips.
+               <br><br>
+               Europium is a video essay directed by Lisa Rave, artist currently living and working in Berlin who’s practice focuses on film. Co-written with Erik Blinderman the project underlines the ambiguous link between a corpus of hyper saturated photographs of “Nature” often displayed in commercials for TV screens, perfect subject to testify of the resolution manufacturers try to promote and one of the main resources used to build and power the screen themselves. “Europium is not only the title and the subject of the film, it literally plays a role by making the images appear to the viewer as they are” she tells Stefanie Hessler in an interview for Vdrome*. Esther Leslie, political Aesthetics professor at Birkbeck in London as well focuses on the physicality* of these images questioning what they are made of taking us through a history of the liquid crystals hidden under “any glass surface on which lively events take place”. 
+               <br><br>
+               A process of mutation that we can easily put in parallel with the way graphic cards are produced and their actual purpose. Here, it isn’t about Europium* or liquid crystals anymore, but about Silicon, the second most abundant element on earth surface. Promoted for it’s semi-conductor qualities meaning a balanced ability to conduct and resist electricity, that’s what computer chips have been made of until now giving it’s name to the well known valley. We could here draw a similar path if considering how the industry or let’s say we, managed to build out of sand, out of clay, out of rocks, these images that haunt us giving birth at the same time to scarred landscape and disrupted ecosystems.
+               <br><br>
+               Gordon Moore, one of the Intel founders, leading the processing units or CPU industry predicted in 1965 that the quantity of transistors embedded in computer chips would double every eighteen months, meaning approximatively fifty percent increase in performance per year with no effect on it’s production cost.
+               The current 14 nanometer technology has been made available to consumers in 2014 and we are heading towards the mainstream production of the coming 10 nanometers technology. While Intel keeps trying to maintain the Moore’s law alive with a potential 7 nanometers technology, NVIDIA, the company that launched the first graphic card in 1999 speculates on it’s end and promises a “1000X speed up of GPU computing by 2025”. 
+               <br><br>
+               Tools that used to be produce in order to power images are apparently now starting to power reality itself. Nvidia is currently leading a team of more than 200 researcher on Artificial intelligence. “A Visionary, a healer, a creator and so much more. I am AI, brought to life by NVIDIA” That’s what a soft and feminine voice over tells us while watching the promotional video available on their website. 
+               Simulating geometry, lights, shadows, materials, physics, fluids requires millions, billions computations per second turning it into a pretty intensive task to handle and these are problems GPU’s are simply better at solving, their architecture being more appropriate. It appears that it is as well the perfect tool to power to new wave of automation to come.
+               In our journey driven by our desire to achieve a more accurate, better, ideal representation of nature, navigating through the media landscape became a complex task and we are endlessly questioning images, their modes of production and their agenda while wondering what we are looking at. Slowly loosing sense of reality, we can no longer believe what we see. 
+               A registration of the world that as well, does not come without consequences. A process of reduction where a part of it is complexity, of its multitude stays un-rendered. 
+               <br><br>
+               These two phenomenons find their origin in another loss. The industry of silicon mining, a necessary step in order to give birth to the images we are referring to, has a significant ecological impact. 
+               <br><br>
+               We can observe an interesting dynamic where reality is now produced by its own representation, they shattered and crossed the surface of the screen to take place among us. It suddenly feels like shaping new worlds might maybe cost us our own. Automation now powered by the same tools and hardware seem to be the next shift to come, a step further in a production of new realities. In other terms, the screen is broken.
+            </section>
+            <br>
+         </div>
+         <div id="right" style="pointer-events:none;">
+            <div class="slides" style="z-index: -1:">
+               <img id="bastard" src="images/lil.jpg" alt="Girl in a jacket"  style="z-index: -1; height: 100%;"></section>
+               <section id="french" ><img src="images/europium.jpg" alt="europium"  style="z-index: -1; height: 100%;"></section>
+               <section id="spanish"><span>Hola</span></section>
+               <section id="hindi"><span>Namaste</span></section>
+               <section id="mandarin" style="z-index: -1; height: 100%;"><span>blabla</span></section>
+            </div>
+         </div>
+      </div>
+      <div class="btmnav" style="bottom: 0; position: fixed;">
+         <a href="#Home" class="button" style="width:49.8%; border-right: 1px solid black; border-top: 1px solid black; background-color: black; color: black;"><button onclick="on()">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</button></a>
+         <a href="#Credits" style="width:50%; border-top: 1px solid black; ">2</a>
+      </div>
+      <script>
+         slider('.slides');
+      </script>
+      <script type="text/javascript">
+         function on() {
+         document.getElementById("overlay_2").style.display = "block";
+         }
+         
+         function off() {
+         document.getElementById("overlay_2").style.display = "none";
+         }
+      </script>
+   </body>

@@ -38,6 +38,11 @@ h2 {
    font-weight: normal;
    text-align: center;
 }
+h5 {
+   font-size: 40pt;
+   font-weight: normal;
+   line-height: 37pt;
+}
 
 .topnav {
    overflow: hidden;
@@ -146,17 +151,33 @@ p {
 .index {
    font-size: 20pt;
    width: 100%;
-   bottom: 0;
-   margin-top: -3%;
+   page-break-after: always;
 }
 
 li {
-   border-top: 1px solid black;
+/*   border-top: 1px solid black;*/
 }
 
 ul {
    padding-left: 0px;
-   border-bottom: 1px solid black;
+/*   border-bottom: 1px solid black;*/
    list-style: none;
    width: 100%;
+   page-break-after: always;
+}
+.chapter {
+   width: 49%;
+   display: inline-grid;
+   margin-top: -12%;
+}
+.empty {
+   page-break-after: always !important;
+}
+.visuals {
+   width: 100%;
+   page-break-after: always;
+}
+figcaption {
+   font-size: 20pt;
+   text-align: center;
 }

@@ -29,7 +29,8 @@ body {
 }
 
 img {
-   width: 100%
+   width: 100%;
+   display:none;
 }
 
 h1 {
@@ -234,15 +235,17 @@ button {
 
 li {
    display: none;
-   border-top: 1px solid black;
-   padding: .3em 0;
 }
 
 ul {
    display: none;
-   margin-left: 40px;
    padding-left: 0px;
-   border-bottom: 1px solid black;
    list-style: none;
    width: 100%;
+}
+.chapter {
+   display: none;
+}
+.visuals {
+   display: none;
 }

@@ -99,7 +99,7 @@ h2 {
 #content,
 html,
 body {
-   height: 98%;
+   height: 97.6%;
 }
 
 #left {
@@ -120,13 +120,6 @@ body {
    background-position: center;
 }
 
-#right:hover {
-   float: left;
-   width: 50%;
-   height: 100%;
-   overflow: scroll;
-   background-position: center;
-}
 
 .column_1 {
    width: 100%;

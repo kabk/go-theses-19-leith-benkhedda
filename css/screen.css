@@ -249,3 +249,9 @@ ul {
 .visuals {
    display: none;
 }
+.empty {
+   display: none;
+}
+.colophon {
+   display: none;
+}

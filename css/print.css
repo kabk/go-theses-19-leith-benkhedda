@@ -181,3 +181,8 @@ figcaption {
    font-size: 20pt;
    text-align: center;
 }
+.colophon {
+      font-size: 20pt;
+   width: 100%;
+   page-break-after: always;
+}

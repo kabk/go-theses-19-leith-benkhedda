@@ -11,77 +11,45 @@
       <meta name="Resource-type" content="Document" />
       <link rel="stylesheet" href="print_css">
       <link rel="stylesheet" href="web_css">
+            <script
+         src="https://code.jquery.com/jquery-2.1.4.min.js"
+         integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw="
+         crossorigin="anonymous"></script>
       <script src="js/slider.js"></script>
+      <script src="js/jquery.scrollTo.min.js"></script>
       <link rel="stylesheet" href="css/slider.css">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen">
       <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
    <body>
-      <script src="js/jquery.min.js"></script>
-      <script>
-         $(function() {
-             $('a[href*=#]:not([href=#])').click(function() {
-                 var target = $(this.hash);
-                 target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
-                 if (target.length) {
-                     $('#left').animate({
-                       scrollTop: target.position().top(-100)
-                     }, 1000);
-                     return false;
-                 }
-             });
-         });
-      </script>
-      <script
-         src="https://code.jquery.com/jquery-2.1.4.min.js"
-         integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw="
-         crossorigin="anonymous"></script>
+
       <script type="text/javascript">
-         function sticky_relocate() {
-         var window_top = $('#left').scrollTop();
-         var div_top = $('#sticky-anchor').offset().top;
-         if (window_top > div_top) {
-           $('#sticky').addClass('stick');
-         } 
-         else {
-           $('#sticky').removeClass('stick');
-         }
-         }
          
          $(function () {
            $('#left').scroll(function(){
-             sticky_relocate();
-             console.log($('#section1').position().top);
+             console.log($('#section1').offset().top);
          
-             if ($('#section3').position().top<70)
+             if ($('#section_3').position().top<70)
              {
                $('#sticky h1').text('Made of Metalic Dust'); 
              }
-               else if ($('#section2').position().top<70)
+               else if ($('#section_2').position().top<70)
              {
                $('#sticky h1').text('Come Across'); 
              }
-                else if ($('#section1').position().top<70)
+                else if ($('#section_1').position().top<70)
              {
                $('#sticky h1').text('When Reality Collapsed'); 
              }
            });
          });
       </script>
-      <!--       <div id="overlay_print" style="background-image: url(css/back.jpg); height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; "></div> -->
-      <!--       <div id="overlay_2" onclick="off()" style="background-image: url(images/greentrack.jpg); height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; ">"></div> -->
-      <div id="overlay"><img src="images/track.png" alt="Girl in a jacket"></div>
- <!--      <div id="overlay_2" onclick="off()">
-         <video autoplay muted loop id="myVideo">
-            <source src="images/title.mp4" type="video/mp4">
-         </video>
-      </div> -->
       <div class="topnav">
-         <a href="#section1" style="width:33.2%; border-right: 1px solid black; border-bottom: 1px solid black; z-index: 10; background-color: white;">1</a>
-         <a href="#section2" style="width:33.4%; border-right: 1px solid black; border-bottom: 1px solid black; z-index: 10; background-color: white;">2</a>
-         <a href="#section3" style="width:33.2%; border-bottom: 1px solid black; background-color: white;">3</a>
+         <a  id="section1" href="#section1" style="width:33.2%; border-right: 1px solid black; border-bottom: 1px solid black; z-index: 10; background-color: white;">1</a>
+         <a id="section2" href="#section2" style="width:33.4%; border-right: 1px solid black; border-bottom: 1px solid black; z-index: 10; background-color: white;">2</a>
+         <a id="section3" href="#section3" style="width:33.2%; border-bottom: 1px solid black; background-color: white;">3</a>
       </div>
-      <div class="column_1" style="background-color: white; text-align: center; border-bottom: 1px solid black; z-index: 20;">The Screen is Broken<br> </div>
+      <div class="column_1" style="background-color: white; text-align: center; border-bottom: 1px solid black; z-index: 20;">The Screen is Broken&mdash;<i>If it's Not Real Then What is it ?</i><br> </div>
       <div class="titles" style="margin-top: -1; position: fixed; z-index: 10;">
          <div id="sticky-anchor"></div>
          <div class="column_2" style="background-color: white; text-align: center;">
@@ -89,7 +57,7 @@
                <h1 class='titleMusic noSelect' style="margin: 0;"></h1>
             </div>
          </div>
-         <div class="column_2" style="background-color: white; text-align: center; margin-left: -3px; border-left: 1px solid black; z-index: 5;">LIL MIQUELA</div>
+         <div class="column_2" style="font-size: 15px; background-color: white; text-align: center; margin-left: -3px; border-left: 1px solid black; z-index: 5;">↓</div>
       </div>
       <div class="empty" style="font-size: 40pt;">The Screen is Broken<br>
       </div>
@@ -111,7 +79,7 @@ Index
          <div id="left" style="background-color: white;">
             <h1 style="margin: 1%">
             <br>
-            <section id="section1" style="page-break-before: always; page-break-after: always !important;">
+            <section id="section_1" style="page-break-before: always; page-break-after: always !important;">
                I can feel it damaging my eyesight. I’m trying to look away but I keep on staring at the surface of the screen, not sure of what I’m seeing. Familiar, yet disturbing. My intuition tells me that these images want something from me, from you, from all of us. Coming from a place where nothing happens by chance, they are seeking for my attention, they want me to listen to them, they want me to trust them
                <br><br>
                After a primary scientific understating of how the human eye perceives visual phenomenons, established by Ibn Al Haytam in his book <i>Kitab Al-Manazir</i> or <i>Book of Optics</i> written in 1028, artists tried to represent them accurately with the invention of linear perspective during the Renaissance. Joseph Nicéphore Niépce later achieved the capture of these phenomenons through the lens of the first camera during the 19th century, creating the illusion of a three dimensional space within which things appeared to exist the same way our eyes see them. From pigments to light, from light to 1’s and 0’s. Computer Generated imagery technologies now allow us to simulate reality, displayed by a constantly increasing combination of pixels and frames per second on the surface of our screens.
@@ -149,7 +117,7 @@ Index
              <div class="chapter">
               <h5>Come Across</h5>
             </div>
-            <section id="section2" style="page-break-before: always; page-break-after: always !important;">
+            <section id="section_2" style="page-break-before: always; page-break-after: always !important;">
                The digital image was already characterised by its mutability. Transformed, combined, altered, replacing old digits by new ones. A dynamic that can now be pushed further if we keep in mind that the photographic image or so called lens based capture could not come to life without the encounter and collaboration of three factors: An authorial intentionality, the world as a raw material and the camera as a form of technological mediation. For David Claerbout “the photographer and his subject coproduce one another”, they need each other to exist. With Computer Generated Imagery, this interdependency no longer exist since 3D softwares and their interfaces offer a space of total control where everything is premeditated and contingency doesn’t belong. A landscape of computer-generated object, bodies and environments in which each component, each detail is now a question that has to be answered by its author. A form of world making that Erika Balsom would see as a “seductive possibility of control over represented worlds as a distracting substitute of control over our own. Offering spectacle and entertainment while fulfilling a fantasy of governance, rationality and mastery in a time of crisis, uncertainty and environmental catastrophe.”
                <p style="text-align: center; padding-right: 5%; padding-left: 5%;">“The production of digital affective devices, which double as control mechanisms, is dependent on the decimation of every digitally under represented region of the world. As this new geography displaces the old, the digital subject becomes more visible than the physical subject. While the circulation of, luxury goods, liberal professionals, tourists, and financial flows occupies the whole field of visibility, refugees, seasonal workers, immigrants, and illegal aliens are rendered invisible”<br>  Julieta Aranda and Ana Texeir Pinto—, Toaster, Task Rabbit, 2015
                </p>
@@ -188,7 +156,7 @@ Index
              <div class="chapter">
               <h5>Made of Metallic Dust</h5>
             </div>
-            <section id="section3" style="page-break-before: always; page-break-after: always !important;">
+            <section id="section_3" style="page-break-before: always; page-break-after: always !important;">
                Fictional narratives, binary realities, singular visions of the future and other flawless bodies are also made of matter. Sand became precious, composed of quartz, the silicon dioxide or silica used to produce our hardware or the fiber optic cable through which this website has most probably been channeled. 
                <br><br>
                Europium is a video essay directed by Lisa Rave, artist living and working in Berlin whose practice focuses on film. Co-written with Erik Blinderman the project underlines the ambiguous link between a corpus of hyper saturated photographs of “Nature” often displayed in commercials for TV screens—perfect subject to testify of the resolution manufacturers try to promote—and one of the main resources used to build and power the screen themselves. “Europium is not only the title and the subject of the film, it literally plays a role by making the images appear to the viewer as they are” she tells Stefanie Hessler in an interview for Vdrome. Esther Leslie, political Aesthetics professor at Birkbeck in London as well focuses on the physicality of these images questioning what they are made of, taking us through a history of the liquid crystals hidden under “any glass surface on which lively events take place”. 
@@ -367,18 +335,25 @@ Rendering truth—Ars Electronica 2018 <br>
           <figcaption>I AM AI by NVIDIA, Unkown</figcaption></div></div>
       <div class="btmnav" style="bottom: 0; position: fixed;">
          <a href="#Home" class="button" style="width:49.8%; border-right: 1px solid black; border-top: 1px solid black; background-color: black; color: black;"><button onclick="on()">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</button></a>
-         <a href="#Credits" style="width:50%; border-top: 1px solid black; ">2</a>
+ <a href="#Credits" class="button"  style="width:50%; border-top: 1px solid black; "><button onclick="on()">2</button></a>
       </div>
       <script>
          slider('.slides');
       </script>
       <script type="text/javascript">
-         function on() {
-         document.getElementById("overlay_2").style.display = "block";
-         }
-         
-         function off() {
-         document.getElementById("overlay_2").style.display = "none";
-         }
-      </script>
+
+  $( "#section1" ).click(function() {
+     $("#left").scrollTo('#section_1', 1000, {offset: {top:-25, left:0} });
+     console.log("wassup")
+  });
+    $( "#section2" ).click(function() {
+     $("#left").scrollTo('#section_2', 1000, {offset: {top:-25, left:0} });
+     console.log("wassup")
+  });
+      $( "#section3" ).click(function() {
+     $("#left").scrollTo('#section_3', 1000, {offset: {top:-25, left:0} });
+     console.log("wassup")
+  });
+
+</script>
    </body>
